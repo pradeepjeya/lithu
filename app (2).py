@@ -1,17 +1,16 @@
 # Strategic Business Planning using Python
-# Google Colab Ready Code
+# Corrected Version for .py File
 
-# Install required libraries
-!pip install pandas matplotlib seaborn openpyxl --quiet
+# Install libraries manually before running:
+# pip install pandas matplotlib seaborn openpyxl
 
-# Import libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# -------------------------------
+# -----------------------------------
 # STEP 1: Create Business Dataset
-# -------------------------------
+# -----------------------------------
 
 data = {
     "Year": [2022, 2023, 2024, 2025, 2026],
@@ -22,15 +21,15 @@ data = {
 
 df = pd.DataFrame(data)
 
-# -------------------------------
+# -----------------------------------
 # STEP 2: Calculate Profit
-# -------------------------------
+# -----------------------------------
 
 df["Profit"] = df["Revenue"] - df["Expenses"]
 
-# -------------------------------
+# -----------------------------------
 # STEP 3: Strategic Analysis
-# -------------------------------
+# -----------------------------------
 
 print("\n===== STRATEGIC BUSINESS PLANNING REPORT =====\n")
 
@@ -42,9 +41,9 @@ print("Average Profit:", df["Profit"].mean())
 print("Maximum Revenue:", df["Revenue"].max())
 print("Minimum Expenses:", df["Expenses"].min())
 
-# -------------------------------
+# -----------------------------------
 # STEP 4: SWOT Analysis
-# -------------------------------
+# -----------------------------------
 
 swot = {
     "Strengths": ["High customer growth", "Increasing revenue"],
@@ -61,11 +60,11 @@ for key, value in swot.items():
         print("-", item)
     print()
 
-# -------------------------------
+# -----------------------------------
 # STEP 5: Visualization
-# -------------------------------
+# -----------------------------------
 
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(10, 5))
 
 plt.plot(df["Year"], df["Revenue"], marker='o', label="Revenue")
 plt.plot(df["Year"], df["Expenses"], marker='o', label="Expenses")
@@ -79,11 +78,11 @@ plt.grid(True)
 
 plt.show()
 
-# -------------------------------
+# -----------------------------------
 # STEP 6: Customer Growth Chart
-# -------------------------------
+# -----------------------------------
 
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(8, 5))
 
 sns.barplot(x=df["Year"], y=df["Customers"])
 
@@ -93,9 +92,9 @@ plt.ylabel("Customers")
 
 plt.show()
 
-# -------------------------------
+# -----------------------------------
 # STEP 7: Export Report
-# -------------------------------
+# -----------------------------------
 
 df.to_excel("Strategic_Business_Report.xlsx", index=False)
 
